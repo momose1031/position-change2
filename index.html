@@ -4,8 +4,51 @@
   <meta charset="UTF-8">
   <title>ポジションチェンジ</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
 </head>
 <body>
+  <div class="main">
+    <div class="coat">
+      <div id="pitcher">内海</div>
+      <div id="chatcher">阿部</div>
+      <div id="first">ｲｽｲﾖﾌﾟ</div>
+      <div id="second">脇谷</div>
+      <div id="short">坂本</div>
+      <div id="third">小笠原</div>
+      <div id="left">ラミレス</div>
+      <div id="center">松本</div>
+      <div id="right">亀井</div>
+      <div id="DH">DH:村田</div>
+    </div>
+    <div class="right">
+      <select name="DH-select" id="DH-select">
+        <option value="select1">DHなし</option>
+        <option value="select2">DHあり</option>
+      </select>
+      <div id="select-btn">決定</div>
+      <input type="text" id="player" placeholder="選手名を入力" autofocus class="hidden">
+      <button id="btn" class="hidden">登録</button>
+      <ol id="player-list"></ol>
+      <div id="change-btn">ポジションをシャッフル</div>
+      <div class="buttons">
+        <div id="retry-btn"></div>
+        <div id="end-btn"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="top-page">
+    <p>ポジションチェンジ<br>（野球編）</p>
+    <div id="start-btn">はじめる</div>
+  </div>
+
+  <div id="mask" class="hidden"></div>
+
+  <div id="modal" class="hidden">
+    <p id="modal-p">まずは、DHの有無を決めよう！！</p>
+    <div id="close">閉じる</div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
