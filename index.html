@@ -9,27 +9,28 @@
 <body>
   <div class="main">
     <div class="coat">
-      <div id="pitcher">内海</div>
-      <div id="chatcher">阿部</div>
-      <div id="first">ｲｽｲﾖﾌﾟ</div>
-      <div id="second">脇谷</div>
-      <div id="short">坂本</div>
-      <div id="third">小笠原</div>
-      <div id="left">ラミレス</div>
-      <div id="center">松本</div>
-      <div id="right">亀井</div>
-      <div id="DH">DH:村田</div>
+      <div id="pitcher">投手</div>
+      <div id="chatcher">捕手</div>
+      <div id="first">一塁手</div>
+      <div id="second">二塁手</div>
+      <div id="short">遊撃手</div>
+      <div id="third">三塁手</div>
+      <div id="left">左翼手</div>
+      <div id="center">中堅手</div>
+      <div id="right">右翼手</div>
+      <div id="DH">DHを選択</div>
     </div>
     <div class="right">
       <select name="DH-select" id="DH-select">
+        <option value="select0">選択してください</option>
         <option value="select1">DHなし</option>
         <option value="select2">DHあり</option>
       </select>
       <div id="select-btn">決定</div>
       <input type="text" id="player" placeholder="選手名を入力" autofocus class="hidden">
       <button id="btn" class="hidden">登録</button>
-      <ol id="player-list"></ol>
-      <div id="change-btn">ポジションをシャッフル</div>
+      <ol id="player-lists"></ol>
+      <div id="change-btn" class="hidden">ポジションをシャッフル</div>
       <div class="buttons">
         <div id="retry-btn"></div>
         <div id="end-btn"></div>
