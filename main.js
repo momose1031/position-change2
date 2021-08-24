@@ -28,6 +28,7 @@ const btn = document.getElementById('btn');
 const changeBtn = document.getElementById('change-btn');
 const retryBtn = document.getElementById('retry-btn');
 const endBtn = document.getElementById('end-btn');
+const reloadBtn = document.getElementById('reload-btn');
 
 const modalP1 = document.createElement('p');
 const modalP2 = document.createElement('p');
@@ -150,7 +151,7 @@ DHSelect.addEventListener('change', (e) => {
           close.before(modalP8);
           modalP9.textContent = '９：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
           close.before(modalP9);
-          // reloadBtn.classList.remove('hidden');
+          reloadBtn.classList.remove('hidden');
         });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9);
@@ -246,6 +247,41 @@ DHSelect.addEventListener('change', (e) => {
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          battingNum = [
+            '(指)' + DH.textContent,
+            '(捕)' + chatcher.textContent,
+            '(一)' + first.textContent,
+            '(二)' + second.textContent,
+            '(三)' + third.textContent,
+            '(遊)' + short.textContent,
+            '(左)' + left.textContent,
+            '(中)' + center.textContent,
+            '(右)' + right.textContent
+          ];
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日の打順はこれだ！！';
+          modalP1.textContent = '１：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP1);
+          modalP2.textContent = '２：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP2);
+          modalP3.textContent = '３：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP3);
+          modalP4.textContent = '４：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP4);
+          modalP5.textContent = '５：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP5);
+          modalP6.textContent = '６：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP6);
+          modalP7.textContent = '７：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP7);
+          modalP8.textContent = '８：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP8);
+          modalP9.textContent = '９：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP9);
+          reloadBtn.classList.remove('hidden');
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9, player10);
           pitcher.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];

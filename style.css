@@ -91,6 +91,74 @@ body {
   margin: 0 auto;
 }
 
+#DH-select {
+  font-size: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+#select-btn, #change-btn {
+  background-color:orange;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  height: 30px;
+}
+
+#player {
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.delete-btn {
+  cursor: pointer;
+  margin-bottom: 3px;
+  color: red;
+  font-size: 10px;
+  width: 50px;
+}
+
+#change-btn, #select-btn, #start-btn, #retry-btn, #end-btn, #close {
+  cursor: pointer;
+  user-select: none;
+}
+
+#select-btn:hover, #change-btn:hover, #start-btn:hover, #retry-btn:hover, #end-btn:hover {
+  opacity: 0.8;
+}
+
+.buttons {
+  display: flex;
+}
+
+#retry-btn {
+  background-color: orange;
+  color: #fff;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#end-btn {
+  background-color: orangered;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#reload-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#reload-btn > a {
+  text-decoration: none;
+  color: #fff;
+  background-color: green;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 #top-page {
   position: fixed;
   top: 0;
@@ -107,7 +175,6 @@ body {
 #top-page > p {
   font-size: 100px;
   text-align: center;
-  /* color:orange; */
 }
 
 #start-btn {
@@ -146,7 +213,6 @@ body {
 }
 
 #close {
-  cursor: pointer;
   width: 200px;
   border: 1px solid #ccc;
   border-radius: 4px;
