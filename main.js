@@ -43,6 +43,7 @@ const modalP9 = document.createElement('p');
 DHSelect.addEventListener('change', (e) => {
   if (e.target.value === 'select1') {
     DH.textContent = 'DHなし';
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       DHSelect.classList.add('hidden');
@@ -170,6 +171,7 @@ DHSelect.addEventListener('change', (e) => {
   }
   else if (e.target.value === 'select2') {
     DH.textContent = 'DHあり';
+    selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
       DHSelect.classList.add('hidden');
@@ -300,6 +302,7 @@ DHSelect.addEventListener('change', (e) => {
   }
   else {
     DH.textContent = 'DHを選択';
+    selectBtn.classList.add('hidden');
   }
 });
 
