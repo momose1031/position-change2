@@ -29,10 +29,21 @@ const changeBtn = document.getElementById('change-btn');
 const retryBtn = document.getElementById('retry-btn');
 const endBtn = document.getElementById('end-btn');
 
+const modalP1 = document.createElement('p');
+const modalP2 = document.createElement('p');
+const modalP3 = document.createElement('p');
+const modalP4 = document.createElement('p');
+const modalP5 = document.createElement('p');
+const modalP6 = document.createElement('p');
+const modalP7 = document.createElement('p');
+const modalP8 = document.createElement('p');
+const modalP9 = document.createElement('p');
+
 DHSelect.addEventListener('change', (e) => {
   if (e.target.value === 'select1') {
     DH.textContent = 'DHなし';
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       DHSelect.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -106,6 +117,41 @@ DHSelect.addEventListener('change', (e) => {
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
+        endBtn.addEventListener('click', () => {
+          battingNum = [
+            '(投)' + pitcher.textContent,
+            '(捕)' + chatcher.textContent,
+            '(一)' + first.textContent,
+            '(二)' + second.textContent,
+            '(三)' + third.textContent,
+            '(遊)' + short.textContent,
+            '(左)' + left.textContent,
+            '(中)' + center.textContent,
+            '(右)' + right.textContent
+          ];
+          modal.classList.remove('hidden');
+          mask.classList.remove('hidden');
+          modalP.textContent = '今日の打順はこれだ！！';
+          modalP1.textContent = '１：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP1);
+          modalP2.textContent = '２：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP2);
+          modalP3.textContent = '３：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP3);
+          modalP4.textContent = '４：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP4);
+          modalP5.textContent = '５：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP5);
+          modalP6.textContent = '６：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP6);
+          modalP7.textContent = '７：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP7);
+          modalP8.textContent = '８：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP8);
+          modalP9.textContent = '９：' + battingNum.splice(Math.floor(Math.random() * battingNum.length), 1)[0];
+          close.before(modalP9);
+          // reloadBtn.classList.remove('hidden');
+        });
         retryBtn.addEventListener('click', () => {
           players.push(player1, player2, player3, player4, player5, player6, player7, player8, player9);
           pitcher.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
@@ -124,6 +170,7 @@ DHSelect.addEventListener('change', (e) => {
   else if (e.target.value === 'select2') {
     DH.textContent = 'DHあり';
     selectBtn.addEventListener('click', () => {
+      modal2 ();
       DHSelect.classList.add('hidden');
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
@@ -220,3 +267,30 @@ DHSelect.addEventListener('change', (e) => {
   }
 });
 
+const topPage = document.getElementById('top-page');
+const startBtn = document.getElementById('start-btn');
+const modal = document.getElementById('modal');
+const modalP = document.getElementById('modal-p');
+const mask = document.getElementById('mask');
+const close = document.getElementById('close');
+
+startBtn.addEventListener('click', () => {
+  topPage.classList.add('hidden');
+  modal.classList.remove('hidden');
+  mask.classList.remove('hidden');
+});
+
+close.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  mask.classList.add('hidden');
+});
+
+mask.addEventListener('click', () => {
+  close.click();
+});
+
+function modal2 () {
+  modal.classList.remove('hidden');
+  mask.classList.remove('hidden');
+  modalP.textContent = '出場するプレイヤーを登録しよう！！';
+}
