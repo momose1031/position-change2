@@ -58,6 +58,7 @@ DHSelect.addEventListener('change', (e) => {
           if (e.target.value !== 'select1') {
             return;
           }
+          player.focus();
           players.push(player.value);
           const li = document.createElement('li');
           li.textContent = player.value;
@@ -78,6 +79,7 @@ DHSelect.addEventListener('change', (e) => {
               player.classList.remove('hidden');
               btn.classList.remove('hidden');
               changeBtn.classList.add('hidden');
+              player.focus();
             }
           });
           if (players.length > 8) {
@@ -186,6 +188,7 @@ DHSelect.addEventListener('change', (e) => {
           if (e.target.value !== 'select2') {
             return;
           }
+          player.focus();
           players.push(player.value);
           const li = document.createElement('li');
           li.textContent = player.value;
@@ -206,6 +209,7 @@ DHSelect.addEventListener('change', (e) => {
               player.classList.remove('hidden');
               btn.classList.remove('hidden');
               changeBtn.classList.add('hidden');
+              player.focus();
             }
           });
           if (players.length > 9) {
@@ -322,10 +326,12 @@ startBtn.addEventListener('click', () => {
 close.addEventListener('click', () => {
   modal.classList.add('hidden');
   mask.classList.add('hidden');
+  player.focus();
 });
 
 mask.addEventListener('click', () => {
   close.click();
+  player.focus();
 });
 
 function modal2 () {
