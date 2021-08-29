@@ -46,7 +46,7 @@ DHSelect.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      DHSelect.classList.add('hidden');
+      DHSelect.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
@@ -67,7 +67,7 @@ DHSelect.addEventListener('change', (e) => {
           deleteBtn.textContent = '(削除する)';
           playerLists.appendChild(li);
           playerLists.appendChild(deleteBtn);
-          player.value = ''; //inputの中身を空にする
+          player.value = '';
           deleteBtn.addEventListener('click', () => {
             li.remove();
             deleteBtn.remove();
@@ -176,7 +176,7 @@ DHSelect.addEventListener('change', (e) => {
     selectBtn.classList.remove('hidden');
     selectBtn.addEventListener('click', () => {
       modal2 ();
-      DHSelect.classList.add('hidden');
+      DHSelect.disabled = true;
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
