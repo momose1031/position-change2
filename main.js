@@ -40,6 +40,8 @@ const modalP7 = document.createElement('p');
 const modalP8 = document.createElement('p');
 const modalP9 = document.createElement('p');
 
+const playerForm = document.getElementById('player-form');
+
 DHSelect.addEventListener('change', (e) => {
   if (e.target.value === 'select1') {
     DH.textContent = 'DHなし';
@@ -50,7 +52,7 @@ DHSelect.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (event) => {
         if (bytes(player.value) > 8) {
           alert('全角4文字以内で入力してください')
         }
@@ -88,6 +90,7 @@ DHSelect.addEventListener('change', (e) => {
             changeBtn.classList.remove('hidden');
           }
         }
+        event.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'select1') {
@@ -180,7 +183,7 @@ DHSelect.addEventListener('change', (e) => {
       selectBtn.classList.add('hidden');
       player.classList.remove('hidden');
       btn.classList.remove('hidden');
-      btn.addEventListener('click', () => {
+      playerForm.addEventListener('submit', (event) => {
         if (bytes(player.value) > 8) {
           alert('全角4文字以内で入力してください')
         }
@@ -218,6 +221,7 @@ DHSelect.addEventListener('change', (e) => {
             changeBtn.classList.remove('hidden');
           }
         }
+        event.preventDefault();
       });
       changeBtn.addEventListener('click', () => {
         if (e.target.value !== 'select2') {
@@ -249,13 +253,13 @@ DHSelect.addEventListener('change', (e) => {
         const player9 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
         right.textContent = player9;
         const player10 = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-        DH.textContent = 'DH：' + player10;
+        DH.textContent = '(指)' + player10;
         changeBtn.classList.add('hidden');
         retryBtn.classList.remove('hidden');
         endBtn.classList.remove('hidden');
         endBtn.addEventListener('click', () => {
           battingNum = [
-            '(指)' + DH.textContent,
+            DH.textContent,
             '(捕)' + chatcher.textContent,
             '(一)' + first.textContent,
             '(二)' + second.textContent,
