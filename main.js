@@ -303,7 +303,7 @@ DHSelect.addEventListener('change', (e) => {
           left.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
           center.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
           right.textContent = players.splice(Math.floor(Math.random() * players.length), 1)[0];
-          DH.textContent = 'DH：' + players.splice(Math.floor(Math.random() * players.length), 1)[0];
+          DH.textContent = '(指)' + players.splice(Math.floor(Math.random() * players.length), 1)[0];
         });
       });
     });
